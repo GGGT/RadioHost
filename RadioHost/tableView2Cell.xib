@@ -14,19 +14,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oS3-Xq-f6k">
-                        <rect key="frame" x="8" y="8" width="170" height="75"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="oS3-Xq-f6k">
+                        <rect key="frame" x="8" y="0.0" width="193" height="83"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfg-ZT-KTe">
-                        <rect key="frame" x="26" y="13" width="133" height="23"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="1" green="0.80080161786811632" blue="0.24518816476748251" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PJ-BP-j8l">
                         <rect key="frame" x="201" y="13" width="111" height="70"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfg-ZT-KTe">
+                        <rect key="frame" x="60" y="7" width="133" height="23"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.99129971589999999" green="0.32583679409999999" blue="0.19526879429999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -36,7 +36,10 @@
                 <outlet property="Name" destination="Wfg-ZT-KTe" id="cVz-5F-bRz"/>
                 <outlet property="des" destination="3PJ-BP-j8l" id="Hmv-Bv-Y7M"/>
             </connections>
-            <point key="canvasLocation" x="203" y="405"/>
+            <point key="canvasLocation" x="203" y="404"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="3.jpg" width="440" height="440"/>
+    </resources>
 </document>

@@ -67,6 +67,15 @@
 		63D462B11ADF874600ADE471 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63D462AC1ADF874600ADE471 /* 6.jpg */; };
 		63D462B71ADF94D700ADE471 /* NSFileManager+pathMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D462B61ADF94D700ADE471 /* NSFileManager+pathMethod.m */; };
 		63D462BB1ADF977900ADE471 /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D462BA1ADF977900ADE471 /* NSString+Hashing.m */; };
+		63D462C11AE0A13C00ADE471 /* ZhuBoDongTaiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D462BF1AE0A13C00ADE471 /* ZhuBoDongTaiCell.m */; };
+		63D462C21AE0A13C00ADE471 /* ZhuBoDongTaiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D462C01AE0A13C00ADE471 /* ZhuBoDongTaiCell.xib */; };
+		63D462C51AE0A16E00ADE471 /* ZhuBoDongTaiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D462C41AE0A16E00ADE471 /* ZhuBoDongTaiModel.m */; };
+		63D462CC1AE0BD0400ADE471 /* 111.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D462CB1AE0BD0400ADE471 /* 111.png */; };
+		63D462CE1AE0BDBF00ADE471 /* 122.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63D462CD1AE0BDBF00ADE471 /* 122.jpg */; };
+		63D462D01AE0C05F00ADE471 /* 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D462CF1AE0C05F00ADE471 /* 22.png */; };
+		63D462D21AE0C08D00ADE471 /* 222.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D462D11AE0C08D00ADE471 /* 222.png */; };
+		63D462D81AE0DDE500ADE471 /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D462D61AE0DDE500ADE471 /* DetailController.m */; };
+		63D462D91AE0DDE500ADE471 /* DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D462D71AE0DDE500ADE471 /* DetailController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +192,18 @@
 		63D462B61ADF94D700ADE471 /* NSFileManager+pathMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+pathMethod.m"; sourceTree = "<group>"; };
 		63D462B91ADF977900ADE471 /* NSString+Hashing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hashing.h"; sourceTree = "<group>"; };
 		63D462BA1ADF977900ADE471 /* NSString+Hashing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hashing.m"; sourceTree = "<group>"; };
+		63D462BE1AE0A13C00ADE471 /* ZhuBoDongTaiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhuBoDongTaiCell.h; sourceTree = "<group>"; };
+		63D462BF1AE0A13C00ADE471 /* ZhuBoDongTaiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZhuBoDongTaiCell.m; sourceTree = "<group>"; };
+		63D462C01AE0A13C00ADE471 /* ZhuBoDongTaiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZhuBoDongTaiCell.xib; sourceTree = "<group>"; };
+		63D462C31AE0A16E00ADE471 /* ZhuBoDongTaiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhuBoDongTaiModel.h; sourceTree = "<group>"; };
+		63D462C41AE0A16E00ADE471 /* ZhuBoDongTaiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZhuBoDongTaiModel.m; sourceTree = "<group>"; };
+		63D462CB1AE0BD0400ADE471 /* 111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111.png; sourceTree = "<group>"; };
+		63D462CD1AE0BDBF00ADE471 /* 122.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 122.jpg; sourceTree = "<group>"; };
+		63D462CF1AE0C05F00ADE471 /* 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22.png; sourceTree = "<group>"; };
+		63D462D11AE0C08D00ADE471 /* 222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 222.png; sourceTree = "<group>"; };
+		63D462D51AE0DDE500ADE471 /* DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailController.h; sourceTree = "<group>"; };
+		63D462D61AE0DDE500ADE471 /* DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailController.m; sourceTree = "<group>"; };
+		63D462D71AE0DDE500ADE471 /* DetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +296,8 @@
 				6376D26A1ADE36A800A93A9D /* MusicModel.m */,
 				6376D26C1ADE36B400A93A9D /* TeModel.h */,
 				6376D26D1ADE36B400A93A9D /* TeModel.m */,
+				63D462C31AE0A16E00ADE471 /* ZhuBoDongTaiModel.h */,
+				63D462C41AE0A16E00ADE471 /* ZhuBoDongTaiModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -291,6 +314,9 @@
 				6376D2791ADE420700A93A9D /* TesCollectionViewCell.h */,
 				6376D27A1ADE420700A93A9D /* TesCollectionViewCell.m */,
 				6376D27B1ADE420700A93A9D /* TesCollectionViewCell.xib */,
+				63D462BE1AE0A13C00ADE471 /* ZhuBoDongTaiCell.h */,
+				63D462BF1AE0A13C00ADE471 /* ZhuBoDongTaiCell.m */,
+				63D462C01AE0A13C00ADE471 /* ZhuBoDongTaiCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -313,8 +339,8 @@
 		6376D1F31ADCA92900A93A9D /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				63D462B81ADF977900ADE471 /* MD5加密 */,
-				6376D28B1ADE53D900A93A9D /* MBProcess副本 */,
+				63D462B81ADF977900ADE471 /* MD5 */,
+				6376D28B1ADE53D900A93A9D /* MBProcess */,
 				6376D1FC1ADCB49900A93A9D /* AFNetworking */,
 			);
 			name = Libs;
@@ -431,6 +457,9 @@
 			children = (
 				6376D2441ADCBD0100A93A9D /* BBSController.h */,
 				6376D2451ADCBD0100A93A9D /* BBSController.m */,
+				63D462D51AE0DDE500ADE471 /* DetailController.h */,
+				63D462D61AE0DDE500ADE471 /* DetailController.m */,
+				63D462D71AE0DDE500ADE471 /* DetailController.xib */,
 			);
 			name = BBSController;
 			sourceTree = "<group>";
@@ -447,6 +476,10 @@
 		6376D24D1ADCE25F00A93A9D /* 未命名文件夹 */ = {
 			isa = PBXGroup;
 			children = (
+				63D462D11AE0C08D00ADE471 /* 222.png */,
+				63D462CF1AE0C05F00ADE471 /* 22.png */,
+				63D462CD1AE0BDBF00ADE471 /* 122.jpg */,
+				63D462CB1AE0BD0400ADE471 /* 111.png */,
 				63D462A81ADF874600ADE471 /* 2.jpg */,
 				63D462A91ADF874600ADE471 /* 3.jpg */,
 				63D462AA1ADF874600ADE471 /* 4.jpeg */,
@@ -469,12 +502,13 @@
 			path = "未命名文件夹";
 			sourceTree = "<group>";
 		};
-		6376D28B1ADE53D900A93A9D /* MBProcess副本 */ = {
+		6376D28B1ADE53D900A93A9D /* MBProcess */ = {
 			isa = PBXGroup;
 			children = (
 				6376D28C1ADE53D900A93A9D /* MBProgressHUD.h */,
 				6376D28D1ADE53D900A93A9D /* MBProgressHUD.m */,
 			);
+			name = MBProcess;
 			path = "MBProcess副本";
 			sourceTree = "<group>";
 		};
@@ -487,12 +521,13 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
-		63D462B81ADF977900ADE471 /* MD5加密 */ = {
+		63D462B81ADF977900ADE471 /* MD5 */ = {
 			isa = PBXGroup;
 			children = (
 				63D462B91ADF977900ADE471 /* NSString+Hashing.h */,
 				63D462BA1ADF977900ADE471 /* NSString+Hashing.m */,
 			);
+			name = MD5;
 			path = "MD5加密";
 			sourceTree = "<group>";
 		};
@@ -576,17 +611,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63D462D21AE0C08D00ADE471 /* 222.png in Resources */,
 				6376D2631ADE13EB00A93A9D /* 57.png in Resources */,
+				63D462D01AE0C05F00ADE471 /* 22.png in Resources */,
 				6376D25C1ADCE25F00A93A9D /* ic_home_p@2x.png in Resources */,
 				6376D2611ADCF9EA00A93A9D /* night_top_navigation_searchbutton@2x.png in Resources */,
 				63D462B11ADF874600ADE471 /* 6.jpg in Resources */,
 				6376D25B1ADCE25F00A93A9D /* ic_home_n@2x.png in Resources */,
+				63D462CC1AE0BD0400ADE471 /* 111.png in Resources */,
 				63D462AF1ADF874600ADE471 /* 4.jpeg in Resources */,
 				6376D25F1ADCE25F00A93A9D /* ic_setup_p@2x.png in Resources */,
 				6376D1DB1ADCA3D800A93A9D /* LaunchScreen.xib in Resources */,
+				63D462D91AE0DDE500ADE471 /* DetailController.xib in Resources */,
 				6376D25E1ADCE25F00A93A9D /* ic_setup_n@2x.png in Resources */,
 				6376D27D1ADE420700A93A9D /* TesCollectionViewCell.xib in Resources */,
 				6376D2651ADE142E00A93A9D /* audionews_play_bg@2x.png in Resources */,
+				63D462CE1AE0BDBF00ADE471 /* 122.jpg in Resources */,
 				63D462AD1ADF874600ADE471 /* 2.jpg in Resources */,
 				63D462B01ADF874600ADE471 /* 5.jpg in Resources */,
 				6376D2781ADE416400A93A9D /* tableView2Cell.xib in Resources */,
@@ -595,6 +635,7 @@
 				6376D25D1ADCE25F00A93A9D /* ic_search@2x.png in Resources */,
 				6376D2731ADE3BE800A93A9D /* tableView1Cell.xib in Resources */,
 				63D462AE1ADF874600ADE471 /* 3.jpg in Resources */,
+				63D462C21AE0A13C00ADE471 /* ZhuBoDongTaiCell.xib in Resources */,
 				6376D1D81ADCA3D800A93A9D /* Images.xcassets in Resources */,
 				63D462A71ADF692A00ADE471 /* 1.jpg in Resources */,
 				6376D2581ADCE25F00A93A9D /* ic_download_p@2x.png in Resources */,
@@ -629,6 +670,7 @@
 				6376D2241ADCB49900A93A9D /* AFHTTPRequestOperationManager.m in Sources */,
 				6376D27C1ADE420700A93A9D /* TesCollectionViewCell.m in Sources */,
 				6376D2361ADCB4BE00A93A9D /* NetManager.m in Sources */,
+				63D462C51AE0A16E00ADE471 /* ZhuBoDongTaiModel.m in Sources */,
 				6376D2311ADCB49900A93A9D /* UIProgressView+AFNetworking.m in Sources */,
 				6376D2261ADCB49900A93A9D /* AFNetworkReachabilityManager.m in Sources */,
 				6376D22A1ADCB49900A93A9D /* AFURLResponseSerialization.m in Sources */,
@@ -638,6 +680,7 @@
 				6376D2391ADCB82F00A93A9D /* MyTabbarController.m in Sources */,
 				6376D22F1ADCB49900A93A9D /* UIButton+AFNetworking.m in Sources */,
 				6376D22D1ADCB49900A93A9D /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				63D462D81AE0DDE500ADE471 /* DetailController.m in Sources */,
 				6376D2271ADCB49900A93A9D /* AFSecurityPolicy.m in Sources */,
 				6376D2321ADCB49900A93A9D /* UIRefreshControl+AFNetworking.m in Sources */,
 				63D462B71ADF94D700ADE471 /* NSFileManager+pathMethod.m in Sources */,
@@ -652,6 +695,7 @@
 				6376D1FB1ADCAD8D00A93A9D /* DeviceManager.m in Sources */,
 				6376D1CD1ADCA3D800A93A9D /* main.m in Sources */,
 				6376D2431ADCBCE700A93A9D /* HomeViewController.m in Sources */,
+				63D462C11AE0A13C00ADE471 /* ZhuBoDongTaiCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

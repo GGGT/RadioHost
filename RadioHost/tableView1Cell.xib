@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BNY-5g-16J">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="BNY-5g-16J">
                         <rect key="frame" x="19" y="4" width="90" height="68"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t59-IC-hqQ">
@@ -39,4 +39,7 @@
             <point key="canvasLocation" x="305" y="385.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="4.jpeg" width="1280" height="800"/>
+    </resources>
 </document>

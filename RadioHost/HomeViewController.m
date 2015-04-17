@@ -19,7 +19,7 @@
 //#import "SVProgressHUD.h"
 #import "MBProgressHUD.h"
 
-#define kUrl @"http://youji.com/app/iOS.json?page=%d"
+#define kUrl @"http://GGGGG.com/app/iOS.json?page=%d"
 
 @interface HomeViewController ()
 {
@@ -37,6 +37,7 @@
     UIView *bottomView;
     UIScrollView *Rascroll;
     UIScrollView *Muscroll;
+   // UISegmentedControl *segment;
 }
 @end
 
@@ -149,7 +150,7 @@
     
     
     NSArray *arr = @[@"电台",@"音乐",@"特色服务"];
-    for (NSInteger i=0; i<3; i++) {
+    for (NSInteger i=0; i<arr.count; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [btn setTitle:arr[i] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -166,6 +167,12 @@
         }
         [naview addSubview:btn];
     }
+    
+//    segment =[[UISegmentedControl alloc] initWithItems:arr];
+//    segment.frame = CGRectMake(0, 0, 320, 40);
+//    segment.selectedSegmentIndex=0;
+//    [segment addTarget:self action:@selector(segment:) forControlEvents:UIControlEventValueChanged];
+//    [naview addSubview:segment];
     
       //滑动的label
     label = [[UILabel alloc] initWithFrame:CGRectMake(0, 37, [DeviceManager currentScreenSize].width/3, 3)];
@@ -286,6 +293,29 @@
    // [SVProgressHUD showInView:naview status:@"玩命 加载中。。。"];
    // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
+//-(void)segment:(id)sender{
+//    UISegmentedControl *control =(UISegmentedControl *)sender;
+//    switch (control.selectedSegmentIndex) {
+//        case 0:
+//            if (_scrollView == NO) {
+//                _scrollView.contentOffset = CGPointMake(0, 0);
+//            }
+//            break;
+//        case 1:
+////
+////    [UIView animateWithDuration:0.3 animations:^{
+////
+//            if (_scrollView == NO) {
+//                _scrollView.contentOffset = CGPointMake([DeviceManager currentScreenSize].width, 0);
+//            }
+////    NSLog(@"Segment:%ld",control.selectedSegmentIndex);
+////    }];
+//            break;
+////            
+//        default:
+//            break;
+//     }
+//}
 
 //点击btn切换界面
 -(void)btnclick:(UIButton *)btn{
@@ -352,6 +382,8 @@
             UIButton *btn =(UIButton *)[self.view viewWithTag:300];
              isScroll =YES;
             [self btnclick:btn];
+//            segment.selectedSegmentIndex = 0;
+//            [self segment:segment];
             
            
         }
@@ -359,13 +391,16 @@
             UIButton *btn =(UIButton *)[self.view viewWithTag:301];
              isScroll =YES;
             [self btnclick:btn];
+//            segment.selectedSegmentIndex = 1;
+//            [self segment:segment];
            
         }
         if (_scrollView.contentOffset.x>[DeviceManager currentScreenSize].width*3/2 && _scrollView.contentOffset.x<[DeviceManager currentScreenSize].width*2) {
             UIButton *btn =(UIButton *)[self.view viewWithTag:302];
             isScroll =YES;
-
+           // segment.selectedSegmentIndex =2;
             [self btnclick:btn];
+            //[self segment:segment];
         }
         
         isScroll =NO;
@@ -392,34 +427,42 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
     if (tableView == tableView1) {
-        return RadioArray.count;
+        //return RadioArray.count;
+        return 8;
     }else{
-        return MusicArray.count;
+        //return MusicArray.count;
+        return 5;
     }
     
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (tableView == tableView1) {
+       
+        
         static NSString *cellID =@"CellID";
         tableView1Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+         if (RadioArray.count) {
         RadioModel *model = RadioArray[indexPath.row];
-        [cell.RadioImg setImageWithURL:[NSURL URLWithString:model.RadioImg]];
+        //[cell.RadioImg setImageWithURL:[NSURL URLWithString:model.RadioImg]];
         cell.bigTitle.text = model.bigTitle;
         cell.smallTitle.text = [NSString stringWithFormat:@"%@",model.smallTitle];
         
      //   [SVProgressHUD dismiss];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        
+        }
         return cell;
+        
     }else{
         static NSString *cellName =@"cellName";
         tableView2Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellName forIndexPath:indexPath];
+        if (MusicArray.count) {
+            
         MusicModel *model =MusicArray[indexPath.row];
-        [cell.MusicImg setImageWithURL:[NSURL URLWithString:model.MusicImg]];
+       // [cell.MusicImg setImageWithURL:[NSURL URLWithString:model.MusicImg]];
         cell.Name.text =model.Name;
         cell.des.text =[NSString stringWithFormat:@"%@",model.des];
-        
+        }
         return cell;
         
     }

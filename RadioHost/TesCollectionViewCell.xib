@@ -41,7 +41,7 @@
                 <outlet property="smaImage" destination="VZ7-gl-p4a" id="u2J-vO-sVk"/>
                 <outlet property="smallTitle" destination="ruM-Pq-dfW" id="Kab-e5-JxC"/>
             </connections>
-            <point key="canvasLocation" x="249" y="336"/>
+            <point key="canvasLocation" x="-47" y="300"/>
         </collectionViewCell>
     </objects>
     <resources>

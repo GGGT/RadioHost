@@ -26,7 +26,7 @@
     }else{
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    //manager.responseSerializer.accepableContentTypes =[NSSet setWithObjects:@"",nil];  
+    //manager.responseSerializer.accepableContentTypes =[NSSet setWithObjects:@"text/html",nil];
     [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         if ([responseObject isKindOfClass:[NSData class]]) {

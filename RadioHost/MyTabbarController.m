@@ -56,6 +56,7 @@
     NSArray *arr1 =@[@"ic_home_n@2x.png",@"ic_download_n@2x.png",@"ic_history_n@2x.png",@"ic_setup_n@2x.png"];
     NSArray *arr2 = @[@"ic_home_p@2x.png",@"ic_download_p@2x.png",@"ic_history_p@2x.png",@"ic_setup_p@2x.png"];
     NSArray *arr3 =@[@"Home",@"BBS",@"Fans",@"Mine"];
+
     //    CGFloat btnHeight = self.frame.size.height;
 //    CGFloat btnWidth = self.frame.size.width/imageArray.count;
     UIView *view =[[UIView alloc] initWithFrame:CGRectMake(0, 0, [DeviceManager currentScreenSize].width, 49)];
@@ -68,6 +69,8 @@
         
         [btn setImage:[UIImage imageNamed:arr1[i]] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:arr2[i]] forState:UIControlStateSelected];
+        [btn setTitle:arr3[i] forState:UIControlStateNormal];
+        [btn setTitleEdgeInsets:UIEdgeInsetsMake(40, 10, 4, 3)];
         [btn addTarget:self  action:@selector(btnclick:) forControlEvents:UIControlEventTouchUpInside];
         if (i==0) {
            btn.selected =YES;

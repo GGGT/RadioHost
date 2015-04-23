@@ -15,6 +15,7 @@
 +(CGSize)currentScreenSize;
 //操作系统
 +(CGFloat)currentVersion;
-
-
+//获取设备的型号
++(NSString *)currentModel;
++(NSString *)currentName;
 @end

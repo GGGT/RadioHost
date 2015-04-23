@@ -26,7 +26,7 @@
     UILabel *label =[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
     label.text = title;
     label.font = [UIFont systemFontOfSize:21];
-    label.textColor = [UIColor orangeColor];
+    label.textColor = [UIColor whiteColor];
     
     self.navigationItem.titleView = label;
     

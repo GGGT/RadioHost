@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MyTabbarController.h"
+#import "DeviceManager.h"
 @interface AppDelegate ()
 
 @end
@@ -25,9 +26,12 @@
     MyTabbarController *tab =[[MyTabbarController alloc] init];
     self.window.rootViewController = tab;
     
+    NSLog(@"width:%lf",wid);
     
+    NSLog(@"heigh:%lf",heigh);
     
-    
+    NSLog(@"name:%lf",CURRENT_SYS_VERSION);
+    NSLog(@"kurl:%@",kUrl);
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

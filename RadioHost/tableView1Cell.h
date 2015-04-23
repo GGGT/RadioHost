@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *bigTitle;
 @property (weak, nonatomic) IBOutlet UILabel *smallTitle;
 
+
+
 @end

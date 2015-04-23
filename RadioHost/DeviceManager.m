@@ -21,4 +21,13 @@
     return [version floatValue];
     
 }
+//获取设备的型号
++(NSString *)currentModel
+{
+    return [UIDevice currentDevice].model;
+}
++(NSString *)currentName{
+    
+    return [[UIDevice currentDevice] name ];
+}
 @end

@@ -12,7 +12,8 @@
 #import "ZhuBoDongTaiModel.h"
 #import "UIImageView+AFNetworking.h"
 #import "NetManager.h"
-#import "DetailController.h"
+//#import "DetailController.h"
+#import "ViewController1.h"
 
 #define kUrl   @"http://QQQQ.com/app/iOS.json?page=%d"
 
@@ -90,7 +91,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
    // return _dataArray.count;
-    return 7;
+    return 5;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -111,17 +112,17 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 80;
+    return 60;
 }
 //点击触发事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    DetailController *det =[[DetailController alloc] init];
-    UINavigationController *nav =[[UINavigationController alloc] initWithRootViewController:det];
-    [self presentViewController:nav animated:YES completion:^{
+    ViewController1 *vc1 =[[ViewController1 alloc] init];
     
-    }];
-    //[self.navigationController pushViewController:det animated:YES];
+    UINavigationController *nvc =[[UINavigationController alloc] initWithRootViewController:vc1];
+   [self presentViewController:nvc animated:YES completion:^{
+       
+   }];
     
 }
 

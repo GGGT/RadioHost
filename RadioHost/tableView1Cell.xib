@@ -14,32 +14,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="BNY-5g-16J">
-                        <rect key="frame" x="19" y="4" width="90" height="68"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t59-IC-hqQ">
-                        <rect key="frame" x="133" y="4" width="179" height="31"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="l" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdq-RD-xq8">
+                        <rect key="frame" x="107" y="8" width="196" height="31"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.99129971590909094" green="0.32583679405136934" blue="0.19526879429464852" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQ4-4K-hFt">
-                        <rect key="frame" x="127" y="43" width="190" height="26"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ll" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgf-Mn-JER">
+                        <rect key="frame" x="107" y="38" width="220" height="33"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CVA-Em-suX">
+                        <rect key="frame" x="24" y="7" width="68" height="67"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="RadioImg" destination="BNY-5g-16J" id="Pyg-wA-UKl"/>
-                <outlet property="bigTitle" destination="t59-IC-hqQ" id="16P-WY-Bul"/>
-                <outlet property="smallTitle" destination="jQ4-4K-hFt" id="iQL-6T-w5k"/>
+                <outlet property="RadioImg" destination="CVA-Em-suX" id="vpo-0L-Kqp"/>
+                <outlet property="bigTitle" destination="Fdq-RD-xq8" id="p6v-Kp-gUR"/>
+                <outlet property="smallTitle" destination="Rgf-Mn-JER" id="sED-yb-gY4"/>
             </connections>
-            <point key="canvasLocation" x="305" y="385.5"/>
+            <point key="canvasLocation" x="305" y="372.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="4.jpeg" width="1280" height="800"/>
-    </resources>
 </document>

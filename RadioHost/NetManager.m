@@ -26,17 +26,19 @@
     }else{
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    //manager.responseSerializer.accepableContentTypes =[NSSet setWithObjects:@"text/html",nil];
+    manager.responseSerializer.acceptableContentTypes =[NSSet setWithObjects:@"application/json",nil];
+       
     [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        if ([responseObject isKindOfClass:[NSData class]]) {
-            NSData *responseData = (NSData *)responseObject;
-            
-            [responseData writeToFile:path atomically:YES];
-            finishedBlock(responseData);
-        }else{
-            NSLog(@"数据的格式不对哦");
-        }
+//        
+//       if ([responseObject isKindOfClass:[NSData class]]) {
+//            NSData *responseData = (NSData *)responseObject;
+//            
+//            [responseData writeToFile:path atomically:YES];
+            finishedBlock(responseObject);
+     //   }
+//     else{
+//            NSLog(@"数据的格式不对哦");
+//        }
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

@@ -11,6 +11,6 @@
 @interface TeModel : NSObject
 @property (nonatomic,copy)NSString *TeImg;
 @property(nonatomic,copy)NSString *Title;
-@property (nonatomic,copy)NSString *smaImage;
-@property(nonatomic,copy)NSString *smallTitle;
+@property (nonatomic,copy)NSString *anchorId;
+@property(nonatomic,copy)NSString *anchorDes;
 @end

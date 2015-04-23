@@ -10,6 +10,10 @@
 
 #import "RootViewController.h"
 #import "DeviceManager.h"
+#import "HomeViewController.h"
+#import "BBSController.h"
+#import "FansController.h"
+#import "MineViewController.h"
 
 @interface MyTabbarController ()
 
@@ -21,13 +25,40 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+//    
+//    [self createViewController];
+//    [self createTabbar];
+//    
     
-    [self createViewController];
-    [self createTabbar];
+    
+    HomeViewController *home = [[HomeViewController alloc] init];
+       //home.tabBarItem.image =[UIImage imageNamed:@"ic_download_n@2x.png"];
+    UINavigationController *nav1 =[[UINavigationController alloc] initWithRootViewController:home];
+    nav1.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"动态" image:[UIImage imageNamed:@"ic_home_n@2x.png"] selectedImage:[UIImage imageNamed:nil]];
+
     
     
     
+    BBSController *bbs = [[BBSController alloc] init];
     
+    UINavigationController *nav2 =[[UINavigationController alloc] initWithRootViewController:bbs];
+    nav2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"发现" image:[UIImage imageNamed:@"ic_history_n@2x.png"] selectedImage:[UIImage imageNamed:nil]];
+    
+     FansController *fans = [[FansController alloc] init];
+    
+    UINavigationController *nav3 =[[UINavigationController alloc] initWithRootViewController:fans];
+    nav3.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"下载" image:[UIImage imageNamed:@"ic_download_n@2x.png"] selectedImage:[UIImage imageNamed:nil]];
+    
+    MineViewController *mine = [[MineViewController alloc] init];
+   
+    UINavigationController *nav4 =[[UINavigationController alloc] initWithRootViewController:mine];
+    nav4.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"设置" image:[UIImage imageNamed:@"ic_setup_n@2x.png"] selectedImage:[UIImage imageNamed:@"ic_setup_p@2x.png"]];
+    
+    self.viewControllers = @[nav2,nav1,nav3,nav4];
+    self.selectedIndex = 1;
+    
+    
+
     
     
 }

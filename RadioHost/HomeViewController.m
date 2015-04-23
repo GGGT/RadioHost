@@ -18,8 +18,13 @@
 #import "UIImageView+AFNetworking.h"
 //#import "SVProgressHUD.h"
 #import "MBProgressHUD.h"
+#import "ViewController1.h"
+#import "ViewController22.h"
+#import "ZhuboDetailController.h"
+//#import "PicModel.h"
 
-#define kUrl @"http://GGGGG.com/app/iOS.json?page=%d"
+//#define kUrl @"http://GGGGG.com/app/iOS.json?page=%d"
+//#
 
 @interface HomeViewController ()
 {
@@ -28,6 +33,7 @@
     UIScrollView *_scrollView;
     NSMutableArray *RadioArray;
     NSMutableArray *MusicArray;
+    NSMutableArray *PicArray;
     NSMutableArray *TeArray;
     UITableView *tableView2;
     UITableView *tableView1;
@@ -38,6 +44,7 @@
     UIScrollView *Rascroll;
     UIScrollView *Muscroll;
    // UISegmentedControl *segment;
+   // float wid :[DeviceManager currentScreenSize].width;
 }
 @end
 
@@ -50,19 +57,22 @@
     RadioArray = [[NSMutableArray alloc] init];
     MusicArray =[[NSMutableArray alloc] init];
     TeArray = [[NSMutableArray alloc] init];
+    PicArray = [[NSMutableArray alloc] init];
     
     [self addTiTle:@"首页"];
     [self addimage:[UIImage imageNamed:@"night_top_navigation_searchbutton@2x"] selector:@selector(searchClick) location:NO];
     
     
-    
+    NSLog(@"%lf",wid);
+    NSLog(@"model:%@",[UIDevice currentDevice].model);
     [self createUI];
    // [self createPoint];
     [self creatNSTimer];
     
-    [self RadiorequestData:kUrl page:1];
-    [self MusicrequestData:kUrl page:1];
-    [self TerequestData:kUrl page:1];
+    [self RadiorequestData ];
+    //[self PicrequestData];
+    [self MusicrequestData:kUrl ];
+    [self TerequestData];
     
     
     
@@ -72,20 +82,35 @@
     
 }
 //数据请求
+
   //电台的数据
--(void)RadiorequestData:(NSString *)url page:(NSInteger)page{
-    
-    NSString *urlString= [NSString stringWithFormat:url,page];
-    [NetManager requestWithString:urlString finished:^(id responseObj) {
+-(void)RadiorequestData {
+//    NSString *str =@"http://123.57.206.120";
+//  
+//    NSString *urlString= [str stringByAppendingString:kUrl];
+//    NSLog(@"duima :%@",urlString);
+    [NetManager requestWithString:kUrl2 finished:^(id responseObj) {
+        
         // 比如是字典－数组－字典
-        NSArray *array = responseObj[@""];
+        
+        NSArray *arr = responseObj[@"activityList"];
+        for (NSDictionary *subdic in arr) {
+
+            
+            [PicArray addObject:subdic[@"image"]];
+            NSLog(@"pic:::%@",PicArray);
+        }
+        [self createpic];
+        
+        NSArray *array = responseObj[@"radioList"];
         for (NSDictionary *subdic in array) {
             RadioModel *model =[[RadioModel alloc] init];
-            model.RadioImg =subdic[@""];
-            model.bigTitle =subdic[@""];
-            model.smallTitle =subdic[@""];
+            model.RadioImg =subdic[@"radioImage"];
+            model.bigTitle =subdic[@"radioTitle"];
+            model.smallTitle =subdic[@"radioDes"];
             
             [RadioArray addObject:model];
+            NSLog(@"radio:::%@",model.RadioImg);
         }
         [tableView1 reloadData];
         
@@ -96,10 +121,10 @@
     
 }
 //音乐的数据
--(void)MusicrequestData:(NSString *)url page:(NSInteger)page{
+-(void)MusicrequestData:(NSString *)url {
     
-    NSString *urlString= [NSString stringWithFormat:url,page];
-    [NetManager requestWithString:urlString finished:^(id responseObj) {
+   // NSString *urlString= [NSString stringWithFormat:url,page];
+    [NetManager requestWithString:url finished:^(id responseObj) {
         // 比如是数组－字典
 //        NSArray *array = responseObj[@""];
         for (NSDictionary *subdic in responseObj) {
@@ -119,18 +144,21 @@
     
 }
 //特色服务的数据
--(void)TerequestData:(NSString *)url page:(NSInteger)page{
-    
-    NSString *urlString= [NSString stringWithFormat:url,page];
-    [NetManager requestWithString:urlString finished:^(id responseObj) {
+-(void)TerequestData{
+//    NSString *str =@"http://123.57.206.120";
+//    
+//    NSString *urlString= [str stringByAppendingString:kUrl];
+
+   // NSString *urlString= [NSString stringWithFormat:url,page];
+    [NetManager requestWithString:kUrl2 finished:^(id responseObj) {
         // 比如是字典－数组－字典
-        NSArray *array = responseObj[@""];
+        NSArray *array = responseObj[@"anchorList"];
         for (NSDictionary *subdic in array) {
             TeModel *model =[[TeModel alloc] init];
-            model.TeImg =subdic[@""];
-            model.Title =subdic[@""];
-            model.smallTitle =subdic[@""];
-            model.smaImage = subdic[@""];
+            model.TeImg =subdic[@"anchorImage"];
+            model.Title =subdic[@"anchorTitle"];
+            model.anchorId =subdic[@"anchorId"];
+            model.anchorDes = subdic[@"anchorDes"];
             [TeArray addObject:model];
         }
         [_TesCollectionView reloadData];
@@ -149,7 +177,7 @@
     [self.view addSubview:naview];
     
     
-    NSArray *arr = @[@"电台",@"音乐",@"特色服务"];
+    NSArray *arr = @[@"❤️电台",@"❤️音乐",@"❤️主播"];
     for (NSInteger i=0; i<arr.count; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [btn setTitle:arr[i] forState:UIControlStateNormal];
@@ -192,36 +220,37 @@
     
     //电台tableView
     
-     NSArray *Raimg = @[@"6.jpg",@"3.jpg",@"4.jpeg",@"5.jpg"];
-    Rascroll =[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 180)];
+         Rascroll =[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, wid, 180)];
     Rascroll.tag = 700;
     [_scrollView addSubview:Rascroll];
-    Rascroll.contentSize = CGSizeMake(320*Raimg.count, 0);
+    Rascroll.contentSize = CGSizeMake(wid*PicArray.count, 0);
     Rascroll.pagingEnabled = YES;
    
-    for (NSInteger i=0; i<Raimg.count; i++) {
-        UIImageView *imgview =[[UIImageView alloc] initWithFrame:CGRectMake(2+i*320, 2, 316, 180)];
-        imgview.image = [UIImage imageNamed:Raimg[i]];
-        //imgview.backgroundColor =[UIColor purpleColor];
-        [Rascroll addSubview:imgview];
-        
-        UILabel *lab =[[UILabel alloc] initWithFrame:CGRectMake(270+i*320, 160, 100, 15)];
-        lab.text = [NSString stringWithFormat:@"%ld / %ld",i+1,Raimg.count];
-        lab.textColor = [UIColor colorWithWhite:250/255.0 alpha:0.9];
-        [Rascroll addSubview:lab];
-    }
-    
-    
-    
-    UIPageControl *pagecontrol = [[UIPageControl alloc] initWithFrame:CGRectMake(20, 170, 60, 10)];
-    pagecontrol.numberOfPages = Raimg.count;
-    
-    pagecontrol.pageIndicatorTintColor =[UIColor orangeColor];
-    pagecontrol.currentPageIndicatorTintColor = [UIColor redColor];
-    
-    pagecontrol.tag = 600;
-    [_scrollView addSubview:pagecontrol];
-
+//    for (NSInteger i=0; i<PicArray.count; i++) {
+//        UIImageView *imgview =[[UIImageView alloc] initWithFrame:CGRectMake(2+i*[DeviceManager currentScreenSize].width, 2, [DeviceManager currentScreenSize].width-4, 180)];
+//       // imgview.image = [UIImage imageNamed:Raimg[i]];
+//        [imgview setImageWithURL:[NSURL URLWithString:[@"http://123.57.206.120:8080/uniaccount/getImage?uri=" stringByAppendingPathComponent:PicArray[i]]]];
+//        NSLog(@"picpic::%@",[@"http://123.57.206.120:8080/uniaccount/getImage?uri=" stringByAppendingPathComponent:PicArray[i]]);
+//        //imgview.backgroundColor =[UIColor purpleColor];
+//        [Rascroll addSubview:imgview];
+//        
+//        UILabel *lab =[[UILabel alloc] initWithFrame:CGRectMake(270+i*wid, 160, 100, 15)];
+//        lab.text = [NSString stringWithFormat:@"%ld / %ld",i+1,PicArray.count];
+//        lab.textColor = [UIColor colorWithWhite:250/255.0 alpha:0.9];
+//        [Rascroll addSubview:lab];
+//    }
+//    
+//    
+//    
+//    UIPageControl *pagecontrol = [[UIPageControl alloc] initWithFrame:CGRectMake(20, 170, 60, 10)];
+//    pagecontrol.numberOfPages = PicArray.count;
+//    
+//    pagecontrol.pageIndicatorTintColor =[UIColor orangeColor];
+//    pagecontrol.currentPageIndicatorTintColor = [UIColor redColor];
+//    
+//    pagecontrol.tag = 600;
+//    [_scrollView addSubview:pagecontrol];
+//
     
     
     tableView1  = [[UITableView alloc]initWithFrame:CGRectMake(0, 186, [DeviceManager currentScreenSize].width, [DeviceManager currentScreenSize].height-64-40)];
@@ -231,6 +260,8 @@
     //tableView1.separatorStyle = NO;
     tableView1.showsVerticalScrollIndicator = NO;
     tableView1.dataSource  =self;
+    //[tableView1 setSeparatorColor:[UIColor redColor]];
+    
     
     
     
@@ -238,15 +269,15 @@
     
     NSArray *Muimg = @[@"2.jpg",@"4.jpeg",@"57.png"];
 
-    Muscroll =[[UIScrollView alloc] initWithFrame:CGRectMake(320, 0, 320, 180)];
+    Muscroll =[[UIScrollView alloc] initWithFrame:CGRectMake(wid, 0, wid, 180)];
     Muscroll.tag = 800;
     [_scrollView addSubview:Muscroll];
-    Muscroll.contentSize = CGSizeMake(320*Muimg.count, 0);
+    Muscroll.contentSize = CGSizeMake(wid*Muimg.count, 0);
     Muscroll.pagingEnabled = YES;
 
     
        for (NSInteger i=0; i<Muimg.count; i++) {
-        UIImageView *imgview =[[UIImageView alloc] initWithFrame:CGRectMake(5+i*320, 2, 310, 180)];
+        UIImageView *imgview =[[UIImageView alloc] initWithFrame:CGRectMake(5+i*wid, 2, wid-10, 180)];
         imgview.image = [UIImage imageNamed:Muimg[i]];
         //imgview.backgroundColor =[UIColor purpleColor];
         [Muscroll addSubview:imgview];
@@ -317,6 +348,36 @@
 //     }
 //}
 
+-(void)createpic{
+    for (NSInteger i=0; i<PicArray.count; i++) {
+        UIImageView *imgview =[[UIImageView alloc] initWithFrame:CGRectMake(2+i*[DeviceManager currentScreenSize].width, 2, [DeviceManager currentScreenSize].width-4, 180)];
+        // imgview.image = [UIImage imageNamed:Raimg[i]];
+        [imgview setImageWithURL:[NSURL URLWithString:[@"http://123.57.206.120:8080/uniaccount/getImage?uri=" stringByAppendingPathComponent:PicArray[i]]]];
+        NSLog(@"picpic::%@",[@"http://123.57.206.120:8080/uniaccount/getImage?uri=" stringByAppendingPathComponent:PicArray[i]]);
+        //imgview.backgroundColor =[UIColor purpleColor];
+        [Rascroll addSubview:imgview];
+        
+        UILabel *lab =[[UILabel alloc] initWithFrame:CGRectMake(270+i*wid, 160, 100, 15)];
+        lab.text = [NSString stringWithFormat:@"%ld / %ld",i+1,PicArray.count];
+        lab.textColor = [UIColor colorWithWhite:50/255.0 alpha:0.9];
+        [Rascroll addSubview:lab];
+    }
+    
+    
+    
+    UIPageControl *pagecontrol = [[UIPageControl alloc] initWithFrame:CGRectMake(20, 170, 60, 10)];
+    pagecontrol.numberOfPages = PicArray.count;
+    
+    pagecontrol.pageIndicatorTintColor =[UIColor orangeColor];
+    pagecontrol.currentPageIndicatorTintColor = [UIColor redColor];
+    
+    pagecontrol.tag = 600;
+    [_scrollView addSubview:pagecontrol];
+    
+
+}
+
+
 //点击btn切换界面
 -(void)btnclick:(UIButton *)btn{
     NSLog(@"jinlaimei??/");
@@ -339,7 +400,7 @@
             if (btn.tag==300) {
                 //UIScrollView *scroll =(UIScrollView *)[self.view viewWithTag:700];
                 UIPageControl *page =(UIPageControl *)[self.view viewWithTag:600];
-                page.currentPage = Rascroll.contentOffset.x/320;
+                page.currentPage = Rascroll.contentOffset.x/wid;
                 NSLog(@"pppppppp");
             }
         }
@@ -360,7 +421,7 @@
     if (scrollView == Rascroll) {
        // UIScrollView *scroll =(UIScrollView *)[self.view viewWithTag:700];
         UIPageControl *page =(UIPageControl *)[self.view viewWithTag:600];
-        page.currentPage = scrollView.contentOffset.x/320;
+        page.currentPage = scrollView.contentOffset.x/wid;
         NSLog(@"pppppppp");
     }
     
@@ -427,8 +488,8 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
     if (tableView == tableView1) {
-        //return RadioArray.count;
-        return 8;
+        return RadioArray.count;
+        
     }else{
         //return MusicArray.count;
         return 5;
@@ -443,10 +504,13 @@
         static NSString *cellID =@"CellID";
         tableView1Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
          if (RadioArray.count) {
+          cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+             cell.backgroundColor = [UIColor colorWithWhite:200/255.0 alpha:0.3];
         RadioModel *model = RadioArray[indexPath.row];
-        //[cell.RadioImg setImageWithURL:[NSURL URLWithString:model.RadioImg]];
+        [cell.RadioImg setImageWithURL:[NSURL URLWithString:[@"http://123.57.206.120:8080/uniaccount/getImage?uri=" stringByAppendingString:model.RadioImg]]];
+             NSLog(@"zenem::%@",[@"http://123.57.206.120:8080/uniaccount/getImage?uri=" stringByAppendingString:model.RadioImg]);
         cell.bigTitle.text = model.bigTitle;
-        cell.smallTitle.text = [NSString stringWithFormat:@"%@",model.smallTitle];
+       cell.smallTitle.text = [NSString stringWithFormat:@"%@",model.smallTitle];
         
      //   [SVProgressHUD dismiss];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -479,7 +543,8 @@
     }
 }
 //点击触发事件
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (tableView == tableView1) {
         NSLog(@"HHHHHH");
@@ -493,7 +558,7 @@
 #pragma collectionView
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     //return TeArray.count;
-    return 6;
+    return 7;
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -502,7 +567,7 @@
       //判断 增强代码强壮型
     if (TeArray.count) {
         TeModel *model =TeArray[indexPath.item];
-        [MBProgressHUD showHUDAddedTo:cell.TesImg animated:YES];
+       // [MBProgressHUD showHUDAddedTo:cell.TesImg animated:YES];
 //        [cell.TesImg setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:model.TeImg]] placeholderImage:[UIImage imageNamed:@""] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
 //            
 //            [cell.TesImg setImage:image];
@@ -513,9 +578,10 @@
 //        }];
         
        
-        cell.Title.text =model.Title;
-        [cell.smaImage setImageWithURL:[NSURL URLWithString:model.smaImage]];
-        cell.smallTitle.text = [NSString stringWithFormat:@"%@",model.smallTitle];
+        //cell.Title.text =model.Title;
+        [cell.TesImg setImageWithURL:[NSURL URLWithString:[@"http://123.57.206.120:8080/uniaccount/getImage?uri=" stringByAppendingString:model.TeImg]]];
+        NSLog(@"tesezhubo::%@",[@"http://123.57.206.120:8080/uniaccount/getImage?uri=" stringByAppendingString:model.TeImg]);
+        cell.smallTitle.text = [NSString stringWithFormat:@"%@",model.Title];
         
     }
     return cell;
@@ -523,16 +589,50 @@
 #pragma flow layout
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    return CGSizeMake(150, 150);
+    return CGSizeMake(100, 115);
 }
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     
-    return UIEdgeInsetsMake(5, 10, 5, 5);
+    return UIEdgeInsetsMake(10, 10, 20, 5);
 }
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 10;
+}
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+//{
+//    return 10;
+//}
 //点击触发事件
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSLog(@"KKKKKK");
+//    NSLog(@"KKKKKK");
+//    if ([DeviceManager currentScreenSize].width==320&&[DeviceManager currentScreenSize].height==568) {
+//        ViewController1 *vc1 =[[ViewController1 alloc] initWithNibName:@"ViewController1" bundle:nil];
+//         UINavigationController *nav1 =[[UINavigationController alloc] initWithRootViewController:vc1];
+//        [self presentViewController:nav1 animated:YES completion:^{
+//    
+//        }];
+    ZhuboDetailController *dev =[[ZhuboDetailController alloc] init];
+    UINavigationController *nav =[[UINavigationController alloc] initWithRootViewController:dev];
+    [self presentViewController:nav animated:YES completion:^{
+        
+    }];
+
+   // }
+//    if ([DeviceManager currentScreenSize].width==320&&[DeviceManager currentScreenSize].height==480) {
+//        ViewController22 *vc22 =[[ViewController22 alloc] initWithNibName:@"ViewController22" bundle:nil];
+//         UINavigationController *nav2 =[[UINavigationController alloc] initWithRootViewController:vc22];
+//        [self presentViewController:nav2 animated:YES completion:^{
+//            
+//       }];
+//    }
+    
+    //ViewController1 *vc1 =[[ViewController1 alloc] init];
+   // UINavigationController *nav =[[UINavigationController alloc] initWithRootViewController:vc1];
+//    [self presentViewController:nav animated:YES completion:^{
+//        
+//    }];
 }
 
 
@@ -577,33 +677,136 @@
     timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(timerStar) userInfo:nil repeats:YES];
 }
 -(void)timerStar{
-    static wid =320;
+    if ([DeviceManager currentScreenSize].width ==320) {
+   
+        static  widt =320;
+    
     
     UIScrollView *scrview = (UIScrollView *)[self.view viewWithTag:700];
+    
     //当滚到最后一张时，滚到第一张
     if (scrview.contentOffset.x == [DeviceManager currentScreenSize].width*3) {
-        wid =-[DeviceManager currentScreenSize].width*3;
+        widt =-[DeviceManager currentScreenSize].width*3;
         
-         CGPoint point = CGPointMake(wid+scrview.contentOffset.x, 0);
+         CGPoint point = CGPointMake(-[DeviceManager currentScreenSize].width*3+scrview.contentOffset.x, 0);
+        //[scrview setContentOffset:point animated:YES];
+
     }
     if (scrview.contentOffset.x == 0) {
-        wid = [DeviceManager currentScreenSize].width;
+        widt = [DeviceManager currentScreenSize].width;
+       // CGPoint point = CGPointMake(wid+scrview.contentOffset.x, 0);
+        
+
     }
     
-    CGPoint point = CGPointMake(wid+scrview.contentOffset.x, 0);
+    CGPoint point = CGPointMake(widt+scrview.contentOffset.x, 0);
     [scrview setContentOffset:point animated:YES];
     
     static widh =320;
     UIScrollView *scr = (UIScrollView *)[self.view viewWithTag:800];
     if (scr.contentOffset.x == [DeviceManager currentScreenSize].width*2) {
         widh = -[DeviceManager currentScreenSize].width;
+         CGPoint point = CGPointMake(-[DeviceManager currentScreenSize].width+scr.contentOffset.x, 0);
+        //[scrview setContentOffset:point animated:YES];
+
     }
     if (scr.contentOffset.x ==0) {
         widh = [DeviceManager currentScreenSize].width;
+//        CGPoint point = CGPointMake([DeviceManager currentScreenSize].width+scrview.contentOffset.x, 0);
+//        [scrview setContentOffset:point animated:YES];
+
     }
     CGPoint poin = CGPointMake(widh+scr.contentOffset.x, 0);
     [scr setContentOffset:poin animated:YES];
     
+    }
+    if ([DeviceManager currentScreenSize].width ==375) {
+        
+        static  widt =375;
+        
+        
+        UIScrollView *scrview = (UIScrollView *)[self.view viewWithTag:700];
+        
+        //当滚到最后一张时，滚到第一张
+        if (scrview.contentOffset.x == [DeviceManager currentScreenSize].width*3) {
+            widt =-[DeviceManager currentScreenSize].width*3;
+            
+            CGPoint point = CGPointMake(-[DeviceManager currentScreenSize].width*3+scrview.contentOffset.x, 0);
+            //[scrview setContentOffset:point animated:YES];
+            
+        }
+        if (scrview.contentOffset.x == 0) {
+            widt = [DeviceManager currentScreenSize].width;
+            // CGPoint point = CGPointMake(wid+scrview.contentOffset.x, 0);
+            
+            
+        }
+        
+        CGPoint point = CGPointMake(widt+scrview.contentOffset.x, 0);
+        [scrview setContentOffset:point animated:YES];
+        
+        static widh =375;
+        UIScrollView *scr = (UIScrollView *)[self.view viewWithTag:800];
+        if (scr.contentOffset.x == [DeviceManager currentScreenSize].width*2) {
+            widh = -[DeviceManager currentScreenSize].width;
+            CGPoint point = CGPointMake(-[DeviceManager currentScreenSize].width+scr.contentOffset.x, 0);
+            //[scrview setContentOffset:point animated:YES];
+            
+        }
+        if (scr.contentOffset.x ==0) {
+            widh = [DeviceManager currentScreenSize].width;
+            //        CGPoint point = CGPointMake([DeviceManager currentScreenSize].width+scrview.contentOffset.x, 0);
+            //        [scrview setContentOffset:point animated:YES];
+            
+        }
+        CGPoint poin = CGPointMake(widh+scr.contentOffset.x, 0);
+        [scr setContentOffset:poin animated:YES];
+        
+    }else{
+            static  widt =414;
+            
+            
+            UIScrollView *scrview = (UIScrollView *)[self.view viewWithTag:700];
+            
+            //当滚到最后一张时，滚到第一张
+            if (scrview.contentOffset.x == [DeviceManager currentScreenSize].width*3) {
+                widt =-[DeviceManager currentScreenSize].width*3;
+                
+                CGPoint point = CGPointMake(-[DeviceManager currentScreenSize].width*3+scrview.contentOffset.x, 0);
+                //[scrview setContentOffset:point animated:YES];
+                
+            }
+            if (scrview.contentOffset.x == 0) {
+                widt = [DeviceManager currentScreenSize].width;
+                // CGPoint point = CGPointMake(wid+scrview.contentOffset.x, 0);
+                
+                
+            }
+            
+            CGPoint point = CGPointMake(widt+scrview.contentOffset.x, 0);
+            [scrview setContentOffset:point animated:YES];
+            
+            static widh =414;
+            UIScrollView *scr = (UIScrollView *)[self.view viewWithTag:800];
+            if (scr.contentOffset.x == [DeviceManager currentScreenSize].width*2) {
+                widh = -[DeviceManager currentScreenSize].width;
+                CGPoint point = CGPointMake(-[DeviceManager currentScreenSize].width+scr.contentOffset.x, 0);
+                //[scrview setContentOffset:point animated:YES];
+                
+            }
+            if (scr.contentOffset.x ==0) {
+                widh = [DeviceManager currentScreenSize].width;
+                //        CGPoint point = CGPointMake([DeviceManager currentScreenSize].width+scrview.contentOffset.x, 0);
+                //        [scrview setContentOffset:point animated:YES];
+                
+            }
+            CGPoint poin = CGPointMake(widh+scr.contentOffset.x, 0);
+            [scr setContentOffset:poin animated:YES];
+            
+        }
+
+    
+
 }
 
 - (void)didReceiveMemoryWarning {

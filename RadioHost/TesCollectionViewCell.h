@@ -10,8 +10,8 @@
 
 @interface TesCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *TesImg;
-@property (weak, nonatomic) IBOutlet UIImageView *smaImage;
-@property (weak, nonatomic) IBOutlet UILabel *Title;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *smallTitle;
 
 @end

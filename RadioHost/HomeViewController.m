@@ -22,7 +22,7 @@
 #import "ViewController22.h"
 #import "ZhuboDetailController.h"
 //#import "PicModel.h"
-
+#import "MJRefresh.h"
 //#define kUrl @"http://GGGGG.com/app/iOS.json?page=%d"
 //#
 
@@ -253,7 +253,7 @@
 //
     
     
-    tableView1  = [[UITableView alloc]initWithFrame:CGRectMake(0, 186, [DeviceManager currentScreenSize].width, [DeviceManager currentScreenSize].height-64-40)];
+    tableView1  = [[UITableView alloc]initWithFrame:CGRectMake(0, 186, [DeviceManager currentScreenSize].width, [DeviceManager currentScreenSize].height-64-49-180-40)];
     tableView1.delegate = self;
   tableView1.tag=400;
     //    tableView1.bounces = NO;
@@ -261,7 +261,8 @@
     tableView1.showsVerticalScrollIndicator = NO;
     tableView1.dataSource  =self;
     //[tableView1 setSeparatorColor:[UIColor redColor]];
-    
+    [tableView1 addHeaderWithTarget:self action:@selector(headerfresh)];
+    [tableView1 addFooterWithTarget:self action:@selector(footmore)];
     
     
     
@@ -375,6 +376,15 @@
     [_scrollView addSubview:pagecontrol];
     
 
+}
+#pragma mark -- fresh
+-(void)headerfresh{
+    [tableView1 reloadData];
+    [tableView1 headerEndRefreshing];
+}
+-(void)footmore{
+    [tableView1 reloadData];
+    [tableView1 headerEndRefreshing];
 }
 
 

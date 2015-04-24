@@ -28,7 +28,7 @@
     
     NSLog(@"width:%lf",wid);
     
-    NSLog(@"heigh:%lf",heigh);
+  
     
     NSLog(@"name:%lf",CURRENT_SYS_VERSION);
     NSLog(@"kurl:%@",kUrl);

@@ -31,9 +31,9 @@
     [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //        
 //       if ([responseObject isKindOfClass:[NSData class]]) {
-//            NSData *responseData = (NSData *)responseObject;
-//            
-//            [responseData writeToFile:path atomically:YES];
+  //          NSData *responseData = (NSData *)responseObject;
+        
+        //    [responseObject writeToFile:path atomically:YES];
             finishedBlock(responseObject);
      //   }
 //     else{

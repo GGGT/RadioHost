@@ -40,22 +40,22 @@
 
 -(void)createUI{
     
-    UIView *vie =[[UIView alloc] initWithFrame:CGRectMake(0, 0, wid,heigh/3)];
+    UIView *vie =[[UIView alloc] initWithFrame:CGRectMake(0, 0, wid,220)];
     vie.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:vie];
     
     UIImageView *imgview =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"333"]];
-    imgview.frame = CGRectMake(16, 74, 50, 50);
+    imgview.frame = CGRectMake(16, 80, 50, 50);
     [self.view addSubview:imgview];
     
-    UILabel *lab1 =[[UILabel alloc] initWithFrame:CGRectMake(70, 74, 100, 26)];
+    UILabel *lab1 =[[UILabel alloc] initWithFrame:CGRectMake(75, 80, 100, 26)];
     lab1.text = @"小强来了";
     lab1.textColor = [UIColor blueColor];
     lab1.font =[UIFont systemFontOfSize:19];
     [self.view addSubview:lab1];
     
     
-    UILabel *lab2 =[[UILabel alloc] initWithFrame:CGRectMake(70, 100, 100, 26)];
+    UILabel *lab2 =[[UILabel alloc] initWithFrame:CGRectMake(75, 103, 100, 26)];
     lab2.text = @"金牌达人";
     lab2.textColor = [UIColor darkGrayColor];
     lab2.font =[UIFont systemFontOfSize:14];
@@ -68,24 +68,31 @@
     for (NSInteger i=0; i<3; i++) {
         
         UIImageView *imgview =[[UIImageView alloc] initWithImage:[UIImage imageNamed:arr1[i]]];
-        imgview.frame = CGRectMake(20+i*wid/3, 140, 28, 28);
+        imgview.frame = CGRectMake(22+i*(wid/3+5), 150, 28, 28);
         [self.view addSubview:imgview];
         
-        UILabel *lab3 =[[UILabel alloc] initWithFrame:CGRectMake(49+i*wid/3, 139, 100, 30)];
+        UILabel *lab3 =[[UILabel alloc] initWithFrame:CGRectMake(55+i*(wid/3+5), 149, 100, 30)];
         lab3.text = arr[i];
         lab3.textColor = [UIColor darkGrayColor];
         lab3.font =[UIFont systemFontOfSize:15];
         [self.view addSubview:lab3];
         
-        UILabel *lab4 =[[UILabel alloc] initWithFrame:CGRectMake(40+i*wid/3, 165, 100, 30)];
+        UILabel *lab4 =[[UILabel alloc] initWithFrame:CGRectMake(40+i*(wid/3+3), 179, 100, 30)];
         lab4.text = marr[i];
         lab4.textColor = [UIColor orangeColor];
         lab4.font =[UIFont systemFontOfSize:15];
         [self.view addSubview:lab4];
 
     }
+    UILabel *lab5 =[[UILabel alloc] initWithFrame:CGRectMake(65, 179, 100, 30)];
+    lab5.text = @"(第5名)";
+    lab5.textColor = [UIColor redColor];
+    lab5.font =[UIFont systemFontOfSize:15];
+    [self.view addSubview:lab5];
     
-    _tabView =[[UITableView alloc] initWithFrame:CGRectMake(0, heigh/3+60, wid, 4*40) style:UITableViewStylePlain];
+    
+    
+    _tabView =[[UITableView alloc] initWithFrame:CGRectMake(0, 260, wid, 4*40) style:UITableViewStylePlain];
     _tabView.delegate =self;
     _tabView.dataSource =self;
     [self.view addSubview:_tabView];
@@ -97,7 +104,7 @@
     [btn1 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [btn1 setTitle:@"主播互动" forState:UIControlStateNormal];
     [btn1 setImage:[UIImage imageNamed:@"444"] forState:UIControlStateNormal];
-    [btn1 setFrame:CGRectMake(10, heigh-40, (wid-20)/2-1, 40)];
+    [btn1 setFrame:CGRectMake(10, heigh-50, (wid-20)/2-1, 50)];
     [btn1 addTarget:self action:@selector(btn1click) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn1];
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -105,7 +112,7 @@
 [btn2 setTitle:@"成为粉丝" forState:UIControlStateNormal];
      [btn2 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [btn2 setImage:[UIImage imageNamed:@"4444"] forState:UIControlStateNormal];
-    [btn2 setFrame:CGRectMake(wid/2, heigh-40, (wid-20)/2, 40)];
+    [btn2 setFrame:CGRectMake(wid/2, heigh-50, (wid-20)/2, 50)];
     [btn2 addTarget:self action:@selector(btn1click) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn2];
     

@@ -14,9 +14,6 @@
 		6371953F1AE4A7C4003C3048 /* 4444.png in Resources */ = {isa = PBXBuildFile; fileRef = 6371953E1AE4A7C4003C3048 /* 4444.png */; };
 		637195411AE4A7C9003C3048 /* 444.png in Resources */ = {isa = PBXBuildFile; fileRef = 637195401AE4A7C9003C3048 /* 444.png */; };
 		637195481AE4FB5A003C3048 /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637195471AE4FB5A003C3048 /* ViewController2.xib */; };
-		6371954A1AE4FC2A003C3048 /* ViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637195491AE4FC2A003C3048 /* ViewController3.xib */; };
-		6371954C1AE50023003C3048 /* ViewController4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6371954B1AE50023003C3048 /* ViewController4.xib */; };
-		6371954E1AE5FF0B003C3048 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6371954D1AE5FF0B003C3048 /* Empty.xib */; };
 		637195541AE61AD6003C3048 /* ViewController22.m in Sources */ = {isa = PBXBuildFile; fileRef = 637195531AE61AD6003C3048 /* ViewController22.m */; };
 		637195921AE64C8B003C3048 /* ZhuboDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637195911AE64C8B003C3048 /* ZhuboDetailController.m */; };
 		637195961AE7359A003C3048 /* ZhuboDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 637195941AE7359A003C3048 /* ZhuboDetailCell.m */; };
@@ -82,6 +79,8 @@
 		63ABAAC91AE8E902002E825A /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ABAABF1AE8E902002E825A /* UIScrollView+MJExtension.m */; };
 		63ABAACA1AE8E902002E825A /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ABAAC11AE8E902002E825A /* UIScrollView+MJRefresh.m */; };
 		63ABAACB1AE8E902002E825A /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ABAAC31AE8E902002E825A /* UIView+MJExtension.m */; };
+		63ABAADB1AEDD7AC002E825A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 63ABAAD81AEDD7AC002E825A /* SVProgressHUD.bundle */; };
+		63ABAADC1AEDD7AC002E825A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ABAADA1AEDD7AC002E825A /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		63D462A71ADF692A00ADE471 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63D462A61ADF692A00ADE471 /* 1.jpg */; };
 		63D462AD1ADF874600ADE471 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63D462A81ADF874600ADE471 /* 2.jpg */; };
 		63D462AE1ADF874600ADE471 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63D462A91ADF874600ADE471 /* 3.jpg */; };
@@ -118,9 +117,6 @@
 		6371953E1AE4A7C4003C3048 /* 4444.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4444.png; sourceTree = "<group>"; };
 		637195401AE4A7C9003C3048 /* 444.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 444.png; sourceTree = "<group>"; };
 		637195471AE4FB5A003C3048 /* ViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
-		637195491AE4FC2A003C3048 /* ViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController3.xib; sourceTree = "<group>"; };
-		6371954B1AE50023003C3048 /* ViewController4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController4.xib; sourceTree = "<group>"; };
-		6371954D1AE5FF0B003C3048 /* Empty.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
 		637195521AE61AD6003C3048 /* ViewController22.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController22.h; sourceTree = "<group>"; };
 		637195531AE61AD6003C3048 /* ViewController22.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController22.m; sourceTree = "<group>"; };
 		637195901AE64C8B003C3048 /* ZhuboDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhuboDetailController.h; sourceTree = "<group>"; };
@@ -239,6 +235,9 @@
 		63ABAAC11AE8E902002E825A /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		63ABAAC21AE8E902002E825A /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		63ABAAC31AE8E902002E825A /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		63ABAAD81AEDD7AC002E825A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		63ABAAD91AEDD7AC002E825A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		63ABAADA1AEDD7AC002E825A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		63D462A61ADF692A00ADE471 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		63D462A81ADF874600ADE471 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		63D462A91ADF874600ADE471 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
@@ -398,6 +397,7 @@
 		6376D1F31ADCA92900A93A9D /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				63ABAAD71AEDD7AC002E825A /* SVProgressHUD, */,
 				63ABAAB31AE8E901002E825A /* MJRefresh. */,
 				63D462B81ADF977900ADE471 /* MD5 */,
 				6376D28B1ADE53D900A93A9D /* MBProcess */,
@@ -531,10 +531,7 @@
 				637195371AE4A083003C3048 /* ViewController1.xib */,
 				637195521AE61AD6003C3048 /* ViewController22.h */,
 				637195531AE61AD6003C3048 /* ViewController22.m */,
-				6371954D1AE5FF0B003C3048 /* Empty.xib */,
 				637195471AE4FB5A003C3048 /* ViewController2.xib */,
-				637195491AE4FC2A003C3048 /* ViewController3.xib */,
-				6371954B1AE50023003C3048 /* ViewController4.xib */,
 				637195901AE64C8B003C3048 /* ZhuboDetailController.h */,
 				637195911AE64C8B003C3048 /* ZhuboDetailController.m */,
 			);
@@ -605,6 +602,16 @@
 				63ABAAC31AE8E902002E825A /* UIView+MJExtension.m */,
 			);
 			path = MJRefresh.;
+			sourceTree = "<group>";
+		};
+		63ABAAD71AEDD7AC002E825A /* SVProgressHUD, */ = {
+			isa = PBXGroup;
+			children = (
+				63ABAAD81AEDD7AC002E825A /* SVProgressHUD.bundle */,
+				63ABAAD91AEDD7AC002E825A /* SVProgressHUD.h */,
+				63ABAADA1AEDD7AC002E825A /* SVProgressHUD.m */,
+			);
+			path = "SVProgressHUD,";
 			sourceTree = "<group>";
 		};
 		63D462B21ADF92F300ADE471 /* Category */ = {
@@ -710,7 +717,6 @@
 				637195971AE7359A003C3048 /* ZhuboDetailCell.xib in Resources */,
 				637195481AE4FB5A003C3048 /* ViewController2.xib in Resources */,
 				63D462D21AE0C08D00ADE471 /* 222.png in Resources */,
-				6371954C1AE50023003C3048 /* ViewController4.xib in Resources */,
 				6376D2631ADE13EB00A93A9D /* 57.png in Resources */,
 				63D462D01AE0C05F00ADE471 /* 22.png in Resources */,
 				6376D25C1ADCE25F00A93A9D /* ic_home_p@2x.png in Resources */,
@@ -718,7 +724,6 @@
 				63D462B11ADF874600ADE471 /* 6.jpg in Resources */,
 				637195391AE4A083003C3048 /* ViewController1.xib in Resources */,
 				6376D25B1ADCE25F00A93A9D /* ic_home_n@2x.png in Resources */,
-				6371954E1AE5FF0B003C3048 /* Empty.xib in Resources */,
 				63D462CC1AE0BD0400ADE471 /* 111.png in Resources */,
 				6371953B1AE4A3A6003C3048 /* 333.png in Resources */,
 				63D462AF1ADF874600ADE471 /* 4.jpeg in Resources */,
@@ -729,7 +734,6 @@
 				63ABAAC41AE8E902002E825A /* MJRefresh.bundle in Resources */,
 				6376D27D1ADE420700A93A9D /* TesCollectionViewCell.xib in Resources */,
 				6376D2651ADE142E00A93A9D /* audionews_play_bg@2x.png in Resources */,
-				6371954A1AE4FC2A003C3048 /* ViewController3.xib in Resources */,
 				63D462CE1AE0BDBF00ADE471 /* 122.jpg in Resources */,
 				63D462AD1ADF874600ADE471 /* 2.jpg in Resources */,
 				63D462B01ADF874600ADE471 /* 5.jpg in Resources */,
@@ -741,6 +745,7 @@
 				63D462AE1ADF874600ADE471 /* 3.jpg in Resources */,
 				63D462C21AE0A13C00ADE471 /* ZhuBoDongTaiCell.xib in Resources */,
 				6376D1D81ADCA3D800A93A9D /* Images.xcassets in Resources */,
+				63ABAADB1AEDD7AC002E825A /* SVProgressHUD.bundle in Resources */,
 				63D462A71ADF692A00ADE471 /* 1.jpg in Resources */,
 				6371953D1AE4A7C0003C3048 /* 44@2x.png in Resources */,
 				6376D2581ADCE25F00A93A9D /* ic_download_p@2x.png in Resources */,
@@ -767,6 +772,7 @@
 				6376D2771ADE416400A93A9D /* tableView2Cell.m in Sources */,
 				6376D2231ADCB49900A93A9D /* AFHTTPRequestOperation.m in Sources */,
 				63ABAACA1AE8E902002E825A /* UIScrollView+MJRefresh.m in Sources */,
+				63ABAADC1AEDD7AC002E825A /* SVProgressHUD.m in Sources */,
 				6376D26B1ADE36A800A93A9D /* MusicModel.m in Sources */,
 				6376D2461ADCBD0100A93A9D /* BBSController.m in Sources */,
 				6376D2301ADCB49900A93A9D /* UIImageView+AFNetworking.m in Sources */,

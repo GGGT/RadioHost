@@ -180,11 +180,12 @@
     
     NSArray *arr = @[@"❤️电台",@"❤️音乐",@"❤️主播"];
     for (NSInteger i=0; i<arr.count; i++) {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setTitle:arr[i] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 
-        [btn setTitleColor:[UIColor colorWithRed:101/255.0 green:190/255.0 blue:254/254.0 alpha:1] forState:UIControlStateSelected];
+        //[btn setTitleColor:[UIColor colorWithRed:1/255.0 green:1/255.0 blue:254/254.0 alpha:1] forState:UIControlStateSelected];
+        [btn setTitleColor:RGBCOLOR(1, 1, 255) forState:UIControlStateSelected];
     //    [btn setFont:[UIFont systemFontOfSize:16]];
         btn.titleLabel.font = [UIFont systemFontOfSize:17];
         btn.tag=300+i;

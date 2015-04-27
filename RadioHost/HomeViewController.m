@@ -223,40 +223,14 @@
     
     //电台tableView
     
-         Rascroll =[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, wid, 180)];
+         Rascroll =[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, wid, 100)];
     Rascroll.tag = 700;
     [_scrollView addSubview:Rascroll];
+//    Rascroll.backgroundColor = [UIColor blackColor];
     Rascroll.contentSize = CGSizeMake(wid*PicArray.count, 0);
     Rascroll.pagingEnabled = YES;
-   
-//    for (NSInteger i=0; i<PicArray.count; i++) {
-//        UIImageView *imgview =[[UIImageView alloc] initWithFrame:CGRectMake(2+i*[DeviceManager currentScreenSize].width, 2, [DeviceManager currentScreenSize].width-4, 180)];
-//       // imgview.image = [UIImage imageNamed:Raimg[i]];
-//        [imgview setImageWithURL:[NSURL URLWithString:[@"http://123.57.206.120:8080/uniaccount/getImage?uri=" stringByAppendingPathComponent:PicArray[i]]]];
-//        NSLog(@"picpic::%@",[@"http://123.57.206.120:8080/uniaccount/getImage?uri=" stringByAppendingPathComponent:PicArray[i]]);
-//        //imgview.backgroundColor =[UIColor purpleColor];
-//        [Rascroll addSubview:imgview];
-//        
-//        UILabel *lab =[[UILabel alloc] initWithFrame:CGRectMake(270+i*wid, 160, 100, 15)];
-//        lab.text = [NSString stringWithFormat:@"%ld / %ld",i+1,PicArray.count];
-//        lab.textColor = [UIColor colorWithWhite:250/255.0 alpha:0.9];
-//        [Rascroll addSubview:lab];
-//    }
-//    
-//    
-//    
-//    UIPageControl *pagecontrol = [[UIPageControl alloc] initWithFrame:CGRectMake(20, 170, 60, 10)];
-//    pagecontrol.numberOfPages = PicArray.count;
-//    
-//    pagecontrol.pageIndicatorTintColor =[UIColor orangeColor];
-//    pagecontrol.currentPageIndicatorTintColor = [UIColor redColor];
-//    
-//    pagecontrol.tag = 600;
-//    [_scrollView addSubview:pagecontrol];
-//
     
-    
-    tableView1  = [[UITableView alloc]initWithFrame:CGRectMake(0, 110, [DeviceManager currentScreenSize].width, [DeviceManager currentScreenSize].height-64-49-100-40)];
+    tableView1  = [[UITableView alloc]initWithFrame:CGRectMake(0, 100, [DeviceManager currentScreenSize].width, [DeviceManager currentScreenSize].height-64-49-100-40)];
     tableView1.delegate = self;
   tableView1.tag=400;
     //    tableView1.bounces = NO;
@@ -278,25 +252,26 @@
     [_scrollView addSubview:Muscroll];
     Muscroll.contentSize = CGSizeMake(wid*Muimg.count, 0);
     Muscroll.pagingEnabled = YES;
+    Muscroll.backgroundColor = [UIColor blackColor];
 
     
        for (NSInteger i=0; i<Muimg.count; i++) {
-        UIImageView *imgview =[[UIImageView alloc] initWithFrame:CGRectMake(5+i*wid, 2, wid-10, 180)];
+        UIImageView *imgview =[[UIImageView alloc] initWithFrame:CGRectMake(5+i*wid, 2, wid-10, 150)];
         imgview.image = [UIImage imageNamed:Muimg[i]];
         //imgview.backgroundColor =[UIColor purpleColor];
         [Muscroll addSubview:imgview];
         
-        UILabel *lab =[[UILabel alloc] initWithFrame:CGRectMake(270+i*320, 160, 100, 20)];
+        UILabel *lab =[[UILabel alloc] initWithFrame:CGRectMake(270+i*320, 130, 100, 20)];
         lab.text = [NSString stringWithFormat:@"%ld /  %ld",i+1,Muimg.count];
         lab.textColor = [UIColor greenColor];
         [Muscroll addSubview:lab];
     }
     
-    tableView2 =[[UITableView alloc]initWithFrame:CGRectMake([DeviceManager currentScreenSize].width, 200, [DeviceManager currentScreenSize].width, [DeviceManager currentScreenSize].height-64-40) style:UITableViewStylePlain];
+    tableView2 =[[UITableView alloc]initWithFrame:CGRectMake([DeviceManager currentScreenSize].width, 160, [DeviceManager currentScreenSize].width, [DeviceManager currentScreenSize].height-64-40) style:UITableViewStylePlain];
     tableView2.delegate = self;
     tableView2.tag=401;
     
-    tableView2.separatorStyle = NO;
+   // tableView2.separatorStyle = NO;
     tableView2.showsVerticalScrollIndicator = NO;
     tableView2.dataSource  =self;
     
@@ -354,26 +329,26 @@
 
 -(void)createpic{
     for (NSInteger i=0; i<PicArray.count; i++) {
-        UIImageView *imgview =[[UIImageView alloc] initWithFrame:CGRectMake(i*[DeviceManager currentScreenSize].width, 2, [DeviceManager currentScreenSize].width, 100)];
+        UIImageView *imgview =[[UIImageView alloc] initWithFrame:CGRectMake(i*[DeviceManager currentScreenSize].width, 0, [DeviceManager currentScreenSize].width, 100)];
         // imgview.image = [UIImage imageNamed:Raimg[i]];
         [imgview setImageWithURL:[NSURL URLWithString:[@"http://123.57.206.120:8080/uniaccount/getImage?uri=" stringByAppendingPathComponent:PicArray[i]]]];
         NSLog(@"picpic::%@",[@"http://123.57.206.120:8080/uniaccount/getImage?uri=" stringByAppendingPathComponent:PicArray[i]]);
         //imgview.backgroundColor =[UIColor purpleColor];
         [Rascroll addSubview:imgview];
-        
-        UILabel *lab =[[UILabel alloc] initWithFrame:CGRectMake(270+i*wid, 90, 100, 15)];
-        lab.text = [NSString stringWithFormat:@"%ld / %ld",i+1,PicArray.count];
-        lab.textColor = [UIColor colorWithWhite:50/255.0 alpha:0.9];
-        [Rascroll addSubview:lab];
+//        
+//        UILabel *lab =[[UILabel alloc] initWithFrame:CGRectMake(270+i*wid, 85, 100, 15)];
+//        lab.text = [NSString stringWithFormat:@"%ld / %ld",i+1,PicArray.count];
+//        lab.textColor = [UIColor colorWithWhite:50/255.0 alpha:0.9];
+//        [Rascroll addSubview:lab];
     }
     
     
     
-    pagecontrol = [[UIPageControl alloc] initWithFrame:CGRectMake(20, 100, 60, 10)];
+    pagecontrol = [[UIPageControl alloc] initWithFrame:CGRectMake(230, 88, 60, 10)];
     pagecontrol.numberOfPages = PicArray.count;
     
-    pagecontrol.pageIndicatorTintColor =[UIColor orangeColor];
-    pagecontrol.currentPageIndicatorTintColor = [UIColor redColor];
+    pagecontrol.pageIndicatorTintColor =[UIColor lightGrayColor];
+    pagecontrol.currentPageIndicatorTintColor = [UIColor whiteColor];
     
     pagecontrol.tag = 600;
     [_scrollView addSubview:pagecontrol];
@@ -445,12 +420,12 @@
 //        UIPageControl *page =(UIPageControl *)[self.view viewWithTag:600];
 //        page.currentPage = Rascroll.contentOffset.x/320;
 //        NSLog(@"pppppppp");
-        pagecontrol.currentPage = Rascroll.contentOffset.x/wid;
+        
         
         if (_scrollView.contentOffset.x <[DeviceManager currentScreenSize].width/2) {
             
             
-            
+            pagecontrol.currentPage = Rascroll.contentOffset.x/wid;
             
             NSLog(@"~~~~~~~~~");
             UIButton *btn =(UIButton *)[self.view viewWithTag:300];
@@ -553,7 +528,7 @@
     if (tableView == tableView1) {
         return 80;
     }else{
-        return 90;
+        return 85;
     }
 }
 //点击触发事件
@@ -650,20 +625,20 @@
 
 
 #pragma Point
--(void)createPoint1{
-    
-    UIPageControl *pagecontrol = [[UIPageControl alloc] initWithFrame:CGRectMake(160, 170, 60, 10)];
-    pagecontrol.numberOfPages = RadioArray.count;
-    
-    pagecontrol.pageIndicatorTintColor =[UIColor orangeColor];
-    pagecontrol.currentPageIndicatorTintColor = [UIColor whiteColor];
-    
-    pagecontrol.tag = 600;
-    [bottomView addSubview:pagecontrol];
-    
-    
-    
-}
+//-(void)createPoint1{
+//    
+//    UIPageControl *pagecontrol = [[UIPageControl alloc] initWithFrame:CGRectMake(160, 170, 60, 10)];
+//    pagecontrol.numberOfPages = RadioArray.count;
+//    
+//    pagecontrol.pageIndicatorTintColor =[UIColor orangeColor];
+//    pagecontrol.currentPageIndicatorTintColor = [UIColor whiteColor];
+//    
+//    pagecontrol.tag = 600;
+//    [bottomView addSubview:pagecontrol];
+//    
+//    
+//    
+//}
 //-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 //    
 //    UIPageControl *page =(UIPageControl *)[self.view viewWithTag:600];
@@ -672,26 +647,27 @@
 //    
 //}
 
--(void)createPoint2{
-    
-    UIPageControl *pagecontrol = [[UIPageControl alloc] initWithFrame:CGRectMake(160, 170, 60, 10)];
-    pagecontrol.numberOfPages = RadioArray.count;
-    
-    pagecontrol.pageIndicatorTintColor =[UIColor orangeColor];
-    pagecontrol.currentPageIndicatorTintColor = [UIColor whiteColor];
-    
-    pagecontrol.tag = 600;
-    [bottomView addSubview:pagecontrol];
-    
-    
-    
-}  //定时器
+//-(void)createPoint2{
+//    
+//    UIPageControl *pagecontrol = [[UIPageControl alloc] initWithFrame:CGRectMake(160, 170, 60, 10)];
+//    pagecontrol.numberOfPages = RadioArray.count;
+//    
+//    pagecontrol.pageIndicatorTintColor =[UIColor orangeColor];
+//    pagecontrol.currentPageIndicatorTintColor = [UIColor whiteColor];
+//    
+//    pagecontrol.tag = 600;
+//    [bottomView addSubview:pagecontrol];
+//    
+//    
+//    
+//}
+//定时器
 -(void)creatNSTimer{
     timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(timerStar) userInfo:nil repeats:YES];
 }
 -(void)timerStar{
     if ([DeviceManager currentScreenSize].width ==320) {
-   
+       //电台的
         static  widt =320;
     
     
@@ -714,7 +690,8 @@
     
     CGPoint point = CGPointMake(widt+scrview.contentOffset.x, 0);
     [scrview setContentOffset:point animated:YES];
-    
+        pagecontrol.currentPage =floor(scrview.contentOffset.x/wid)+1;  //小白点滚动！！！！！
+      //音乐的
     static widh =320;
     UIScrollView *scr = (UIScrollView *)[self.view viewWithTag:800];
     if (scr.contentOffset.x == [DeviceManager currentScreenSize].width*2) {
@@ -731,10 +708,9 @@
     }
     CGPoint poin = CGPointMake(widh+scr.contentOffset.x, 0);
     [scr setContentOffset:poin animated:YES];
-    
-    }
+         }
     if ([DeviceManager currentScreenSize].width ==375) {
-        
+         //电台的
         static  widt =375;
         
         
@@ -757,7 +733,9 @@
         
         CGPoint point = CGPointMake(widt+scrview.contentOffset.x, 0);
         [scrview setContentOffset:point animated:YES];
-        
+        pagecontrol.currentPage =floor(scrview.contentOffset.x/wid)+1;  //小白点滚动！！！！！
+
+          //音乐的
         static widh =375;
         UIScrollView *scr = (UIScrollView *)[self.view viewWithTag:800];
         if (scr.contentOffset.x == [DeviceManager currentScreenSize].width*2) {
@@ -775,7 +753,7 @@
         CGPoint poin = CGPointMake(widh+scr.contentOffset.x, 0);
         [scr setContentOffset:poin animated:YES];
         
-    }else{
+    }else{     //电台的
             static  widt =414;
             
             
@@ -798,7 +776,9 @@
             
             CGPoint point = CGPointMake(widt+scrview.contentOffset.x, 0);
             [scrview setContentOffset:point animated:YES];
-            
+        pagecontrol.currentPage =floor(scrview.contentOffset.x/wid)+1;  //小白点滚动！！！！！
+
+               //音乐的
             static widh =414;
             UIScrollView *scr = (UIScrollView *)[self.view viewWithTag:800];
             if (scr.contentOffset.x == [DeviceManager currentScreenSize].width*2) {

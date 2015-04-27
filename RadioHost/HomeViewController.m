@@ -43,6 +43,7 @@
     UIView *bottomView;
     UIScrollView *Rascroll;
     UIScrollView *Muscroll;
+    UIPageControl *pagecontrol;
    // UISegmentedControl *segment;
    // float wid :[DeviceManager currentScreenSize].width;
 }
@@ -368,7 +369,7 @@
     
     
     
-    UIPageControl *pagecontrol = [[UIPageControl alloc] initWithFrame:CGRectMake(20, 100, 60, 10)];
+    pagecontrol = [[UIPageControl alloc] initWithFrame:CGRectMake(20, 100, 60, 10)];
     pagecontrol.numberOfPages = PicArray.count;
     
     pagecontrol.pageIndicatorTintColor =[UIColor orangeColor];
@@ -409,12 +410,12 @@
         
         if (isScroll == NO) {
             _scrollView.contentOffset =CGPointMake((btn.tag-300)*[DeviceManager currentScreenSize].width, 0);
-            if (btn.tag==300) {
-                //UIScrollView *scroll =(UIScrollView *)[self.view viewWithTag:700];
-                UIPageControl *page =(UIPageControl *)[self.view viewWithTag:600];
-                page.currentPage = Rascroll.contentOffset.x/wid;
-                NSLog(@"pppppppp");
-            }
+//            if (btn.tag==300) {
+//                //UIScrollView *scroll =(UIScrollView *)[self.view viewWithTag:700];
+//                UIPageControl *page =(UIPageControl *)[self.view viewWithTag:600];
+//                page.currentPage = Rascroll.contentOffset.x/wid;
+//                NSLog(@"pppppppp");
+//            }
         }
         
     }];
@@ -430,13 +431,13 @@
 //    page.currentPage = Rascroll.contentOffset.x/320;
 //    NSLog(@"pppppppp");
 //
-    if (scrollView == Rascroll) {
-       // UIScrollView *scroll =(UIScrollView *)[self.view viewWithTag:700];
-        UIPageControl *page =(UIPageControl *)[self.view viewWithTag:600];
-        page.currentPage = scrollView.contentOffset.x/wid;
-        NSLog(@"pppppppp");
-    }
-    
+//    if (scrollView == Rascroll) {
+//       // UIScrollView *scroll =(UIScrollView *)[self.view viewWithTag:700];
+//        UIPageControl *page =(UIPageControl *)[self.view viewWithTag:600];
+//        page.currentPage = scrollView.contentOffset.x/wid;
+//        NSLog(@"pppppppp");
+//    }
+//    
     
     if (scrollView == _scrollView) {
         
@@ -444,7 +445,7 @@
 //        UIPageControl *page =(UIPageControl *)[self.view viewWithTag:600];
 //        page.currentPage = Rascroll.contentOffset.x/320;
 //        NSLog(@"pppppppp");
-        
+        pagecontrol.currentPage = Rascroll.contentOffset.x/wid;
         
         if (_scrollView.contentOffset.x <[DeviceManager currentScreenSize].width/2) {
             

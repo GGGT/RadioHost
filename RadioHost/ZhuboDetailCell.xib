@@ -33,7 +33,11 @@
                     <constraint firstAttribute="bottom" secondItem="S9K-u2-Nal" secondAttribute="bottom" constant="2" id="uhB-gC-5VN"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="343" y="370"/>
+            <connections>
+                <outlet property="Issue" destination="VgP-xD-5hk" id="BFf-gW-Ham"/>
+                <outlet property="Label" destination="S9K-u2-Nal" id="6gU-CW-SsN"/>
+            </connections>
+            <point key="canvasLocation" x="362" y="249"/>
         </tableViewCell>
     </objects>
 </document>

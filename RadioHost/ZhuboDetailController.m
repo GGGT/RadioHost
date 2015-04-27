@@ -125,6 +125,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellID =@"cell";
     ZhuboDetailCell *cell =[tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    NSArray *array =@[@"主持节目",@"微博",@"签名",@"往届节目单"];
+    cell.Issue.text=array[indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return  cell;
     

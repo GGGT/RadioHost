@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ZhuboDetailCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *Issue;
+@property (weak, nonatomic) IBOutlet UILabel *Label;
 
 @end
